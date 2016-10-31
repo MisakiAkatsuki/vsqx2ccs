@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scenario Code="7251BC4B6168E7B2992FA620BD3E1E77">
+  <Sequence Id="">
+    <Scene Id="">
+      <Units>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="84f1eba9-a845-473c-a383-11c2ab94c652" StartTime="00:00:00" Duration="10:00:00">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="3840" Tempo="90" />
+              <Sound Clock="21120" Tempo="123" />
+              <Sound Clock="25440" Tempo="184" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+              <Time Clock="34560" Beats="3" BeatType="4" />
+              <Time Clock="46080" Beats="5" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="3840" PitchStep="0" PitchOctave="4" Duration="960" Lyric="あ" />
+              <Note Clock="4800" PitchStep="2" PitchOctave="4" Duration="480" Lyric="い" />
+              <Note Clock="5280" PitchStep="4" PitchOctave="4" Duration="240" Lyric="う" />
+              <Note Clock="5520" PitchStep="5" PitchOctave="4" Duration="240" Lyric="え" />
+              <Note Clock="5760" PitchStep="0" PitchOctave="4" Duration="960" Lyric="お" />
+              <Note Clock="6720" PitchStep="2" PitchOctave="4" Duration="1920" Lyric="か" />
+              <Note Clock="8640" PitchStep="4" PitchOctave="4" Duration="2880" Lyric="き" />
+              <Note Clock="11520" PitchStep="5" PitchOctave="4" Duration="3840" Lyric="く" />
+              <Note Clock="15360" PitchStep="0" PitchOctave="5" Duration="3840" Lyric="け" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="2e18c0ad-8264-498d-a1d9-6dcafc0252f0" StartTime="00:00:00" Duration="10:00:00">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="3840" Tempo="90" />
+              <Sound Clock="21120" Tempo="123" />
+              <Sound Clock="25440" Tempo="184" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+              <Time Clock="34560" Beats="3" BeatType="4" />
+              <Time Clock="46080" Beats="5" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="19200" PitchStep="4" PitchOctave="4" Duration="960" Lyric="あ" />
+              <Note Clock="20160" PitchStep="5" PitchOctave="4" Duration="480" Lyric="い" />
+              <Note Clock="20640" PitchStep="7" PitchOctave="4" Duration="240" Lyric="う" />
+              <Note Clock="20880" PitchStep="9" PitchOctave="4" Duration="120" Lyric="え" />
+              <Note Clock="21120" PitchStep="4" PitchOctave="4" Duration="960" Lyric="お" />
+              <Note Clock="22080" PitchStep="6" PitchOctave="4" Duration="1920" Lyric="か" />
+              <Note Clock="24000" PitchStep="7" PitchOctave="4" Duration="2880" Lyric="き" />
+              <Note Clock="26880" PitchStep="9" PitchOctave="4" Duration="3840" Lyric="く" />
+              <Note Clock="30720" PitchStep="4" PitchOctave="5" Duration="3840" Lyric="け" />
+            </Score>
+          </Song>
+        </Unit>
+      </Units>
+      <Groups>
+        <Group Version="1.0" Id="84f1eba9-a845-473c-a383-11c2ab94c652" Category="SingerSong" Name="hoge" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="0" IsMuted="0" />
+        <Group Version="1.0" Id="2e18c0ad-8264-498d-a1d9-6dcafc0252f0" Category="SingerSong" Name="2test" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="0" IsMuted="0" />
+      </Groups>
+      <SoundSetting Rhythm="4/4" Tempo="78" />
+    </Scene>
+  </Sequence>
+</Scenario>

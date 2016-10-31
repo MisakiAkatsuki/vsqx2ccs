@@ -1,0 +1,6 @@
+c:\users\rui\documents\visual studio 2010\Projects\vsqx2ccs\vsqx2ccs\bin\Release\vsqx2ccs.exe
+c:\users\rui\documents\visual studio 2010\Projects\vsqx2ccs\vsqx2ccs\bin\Release\vsqx2ccs.pdb
+c:\users\rui\documents\visual studio 2010\Projects\vsqx2ccs\vsqx2ccs\obj\x86\Release\vsqx2ccs.exe
+c:\users\rui\documents\visual studio 2010\Projects\vsqx2ccs\vsqx2ccs\obj\x86\Release\vsqx2ccs.pdb
+C:\Project Files\other\vsqx2ccs\vsqx2ccs\vsqx2ccs\obj\x86\Release\vsqx2ccs.exe
+C:\Project Files\other\vsqx2ccs\vsqx2ccs\vsqx2ccs\obj\x86\Release\vsqx2ccs.pdb

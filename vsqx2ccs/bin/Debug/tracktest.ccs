@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scenario Code="7251BC4B6168E7B2992FA620BD3E1E77">
+  <Sequence Id="">
+    <Scene Id="">
+      <Units>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="c78ee492-1972-408f-ac70-19a3b1b82cd7" StartTime="00:00:00" Duration="00:00:06">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="3840" PitchStep="0" PitchOctave="4" Duration="3840" Lyric="ド" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="c58b4988-1287-4cfb-80a9-0f2996d18e12" StartTime="00:00:00" Duration="00:00:08">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="7680" PitchStep="2" PitchOctave="4" Duration="3840" Lyric="レ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="62c36075-dbb3-4973-9c9b-b9fb8143be8c" StartTime="00:00:00" Duration="00:00:10">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="11520" PitchStep="4" PitchOctave="4" Duration="3840" Lyric="ミ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="8b85ed71-c6ff-45c1-a244-1c42d78bc627" StartTime="00:00:00" Duration="00:00:12">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="15360" PitchStep="5" PitchOctave="4" Duration="3840" Lyric="ファ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="cd3e817f-2257-42d7-a874-2158f7efbd5f" StartTime="00:00:00" Duration="00:00:14">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="6480" PitchStep="4" PitchOctave="2" Duration="7920" Lyric="ミ" />
+              <Note Clock="19200" PitchStep="7" PitchOctave="4" Duration="3840" Lyric="ソ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="2a8572d7-40b9-4c21-a8b1-a81a91d45612" StartTime="00:00:00" Duration="00:00:16">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="23040" PitchStep="9" PitchOctave="4" Duration="3840" Lyric="ラ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="2a8572d7-40b9-4c21-a8b1-a81a91d45613" StartTime="00:00:00" Duration="00:00:18">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="26880" PitchStep="11" PitchOctave="4" Duration="3840" Lyric="シ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="8d7438de-667e-4af1-990d-3d160d6b4be5" StartTime="00:00:00" Duration="00:00:20">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="30720" PitchStep="0" PitchOctave="5" Duration="3840" Lyric="ド" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="8d7438de-667e-4af1-990d-3d160d6b4be6" StartTime="00:00:00" Duration="00:00:22">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="34560" PitchStep="2" PitchOctave="5" Duration="3840" Lyric="レ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="8d7438de-667e-4af1-990d-3d160d6b4be7" StartTime="00:00:00" Duration="00:00:24">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="38400" PitchStep="4" PitchOctave="5" Duration="3840" Lyric="ミ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="8d7438de-667e-4af1-990d-3d160d6b4be8" StartTime="00:00:00" Duration="00:00:26">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="42240" PitchStep="5" PitchOctave="5" Duration="3840" Lyric="ファ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="8d7438de-667e-4af1-990d-3d160d6b4be9" StartTime="00:00:00" Duration="00:00:28">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="46080" PitchStep="7" PitchOctave="5" Duration="3840" Lyric="ソ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="1d7438de-667e-4af1-990d-3d160d6b4be9" StartTime="00:00:00" Duration="00:00:30">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="49920" PitchStep="9" PitchOctave="5" Duration="3840" Lyric="ラ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="2d7438de-667e-4af1-990d-3d160d6b4be9" StartTime="00:00:00" Duration="00:00:32">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="53760" PitchStep="11" PitchOctave="5" Duration="3840" Lyric="シ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="3d7438de-667e-4af1-990d-3d160d6b4be9" StartTime="00:00:00" Duration="00:00:34">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="57600" PitchStep="0" PitchOctave="6" Duration="3840" Lyric="ド" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="4d7438de-667e-4af1-990d-3d160d6b4be9" StartTime="00:00:00" Duration="00:00:36">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="61440" PitchStep="5" PitchOctave="5" Duration="3840" Lyric="ファ" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="5d7438de-667e-4af1-990d-3d160d6b4be9" StartTime="00:00:00" Duration="00:00:36">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="61440" PitchStep="5" PitchOctave="5" Duration="3840" Lyric="ファ" />
+            </Score>
+          </Song>
+        </Unit>
+      </Units>
+      <Groups>
+        <Group Version="1.0" Id="c78ee492-1972-408f-ac70-19a3b1b82cd7" Category="SingerSong" Name="ソング 1" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="c58b4988-1287-4cfb-80a9-0f2996d18e12" Category="SingerSong" Name="ソング 2" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="62c36075-dbb3-4973-9c9b-b9fb8143be8c" Category="SingerSong" Name="ソング 3" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="8b85ed71-c6ff-45c1-a244-1c42d78bc627" Category="SingerSong" Name="ソング 4" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="cd3e817f-2257-42d7-a874-2158f7efbd5f" Category="SingerSong" Name="ソング 5" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="2a8572d7-40b9-4c21-a8b1-a81a91d45612" Category="SingerSong" Name="ソング 6" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="2a8572d7-40b9-4c21-a8b1-a81a91d45613" Category="SingerSong" Name="ソング 7" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="8d7438de-667e-4af1-990d-3d160d6b4be5" Category="SingerSong" Name="ソング 8" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="8d7438de-667e-4af1-990d-3d160d6b4be6" Category="SingerSong" Name="ソング 9" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="8d7438de-667e-4af1-990d-3d160d6b4be7" Category="SingerSong" Name="ソング 10" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="8d7438de-667e-4af1-990d-3d160d6b4be8" Category="SingerSong" Name="ソング 11" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="8d7438de-667e-4af1-990d-3d160d6b4be9" Category="SingerSong" Name="ソング 12" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="1d7438de-667e-4af1-990d-3d160d6b4be9" Category="SingerSong" Name="ソング 13" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="2d7438de-667e-4af1-990d-3d160d6b4be9" Category="SingerSong" Name="ソング 14" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="3d7438de-667e-4af1-990d-3d160d6b4be9" Category="SingerSong" Name="ソング 15" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="4d7438de-667e-4af1-990d-3d160d6b4be9" Category="SingerSong" Name="ソング 16" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="5d7438de-667e-4af1-990d-3d160d6b4be9" Category="SingerSong" Name="ソング 16" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+      </Groups>
+      <SoundSetting Rhythm="4/4" Tempo="78" />
+    </Scene>
+  </Sequence>
+</Scenario>

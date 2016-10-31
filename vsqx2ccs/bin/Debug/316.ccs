@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scenario Code="7251BC4B6168E7B2992FA620BD3E1E77">
+  <Sequence Id="">
+    <Scene Id="">
+      <Units>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="1ae2077f-cd1f-47a5-8f27-2ba791875a7f" StartTime="00:00:00" Duration="00:00:06.4580000">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+              <Sound Clock="8880" Tempo="90" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="3" BeatType="16" />
+              <Time Clock="8640" Beats="8" BeatType="32" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="-1" Mode="0" />
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="5760" PitchStep="0" PitchOctave="4" Duration="1680" Lyric="シ" />
+              <Note Clock="8400" PitchStep="7" PitchOctave="4" Duration="480" Lyric="ファ" />
+              <Note Clock="9120" PitchStep="2" PitchOctave="4" Duration="720" Lyric="ド" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.1" Id="" Category="TextVocal" Group="d2059b18-d7e7-49e0-97d5-96b9e5b5e929" StartTime="00:00:00" Duration="00:00:03.0250000" Text="みなさんこんにちは、さとうささらです" CastId="A">
+          <Direction Volume="0" Speed="1" Tone="0" Alpha="0.55">
+            <Component Name="fine" Value="1.00" />
+            <Component Name="angry" Value="0.00" />
+            <Component Name="sad" Value="0.00" />
+          </Direction>
+          <Phonemes>
+            <Phoneme Data="m" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="i" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="n" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="a" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="s" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="a" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="N" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="k" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="o" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="N" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="n" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="i" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="ch" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="i" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="w" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="a" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="pau" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="s" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="a" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="t" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="o" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="o" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="s" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="a" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="s" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="a" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="r" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="a" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="d" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="e" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="s" Volume="0" Speed="0" Tone="0" />
+            <Phoneme Data="U" Volume="0" Speed="0" Tone="0" />
+          </Phonemes>
+        </Unit>
+      </Units>
+      <Groups>
+        <Group Version="1.0" Id="d2059b18-d7e7-49e0-97d5-96b9e5b5e929" Category="TextVocal" Name="トーク 1" Color="#FF1E90FF" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="1ae2077f-cd1f-47a5-8f27-2ba791875a7f" Category="SingerSong" Name="ソング 1" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+      </Groups>
+      <SoundSetting Rhythm="4/4" Tempo="78" />
+    </Scene>
+  </Sequence>
+</Scenario>

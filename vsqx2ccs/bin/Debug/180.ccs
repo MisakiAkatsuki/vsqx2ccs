@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scenario Code="7251BC4B6168E7B2992FA620BD3E1E77">
+  <Sequence Id="">
+    <Scene Id="">
+      <Units>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="c87f97c9-e93d-44dc-9de1-17739befe312" StartTime="00:00:00" Duration="00:10:00">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="160" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="3840" PitchStep="0" PitchOctave="5" Duration="960" Lyric="ド" />
+              <Note Clock="4800" PitchStep="2" PitchOctave="5" Duration="960" Lyric="レ" />
+              <Note Clock="5760" PitchStep="4" PitchOctave="5" Duration="960" Lyric="ミ" />
+              <Note Clock="6720" PitchStep="5" PitchOctave="5" Duration="960" Lyric="ファ" />
+              <Note Clock="7680" PitchStep="7" PitchOctave="5" Duration="960" Lyric="ソ" />
+              <Note Clock="8640" PitchStep="9" PitchOctave="5" Duration="960" Lyric="ラ" />
+              <Note Clock="9600" PitchStep="11" PitchOctave="5" Duration="960" Lyric="シ" />
+              <Note Clock="10560" PitchStep="0" PitchOctave="6" Duration="1920" Lyric="ド" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="cb93f104-ec5e-463a-b074-ac00a7d7fa30" StartTime="00:00:00" Duration="00:10:00">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="160" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+            </Score>
+          </Song>
+        </Unit>
+      </Units>
+      <Groups>
+        <Group Version="1.0" Id="c87f97c9-e93d-44dc-9de1-17739befe312" Category="SingerSong" Name="" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="cb93f104-ec5e-463a-b074-ac00a7d7fa30" Category="SingerSong" Name="" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+      </Groups>
+      <SoundSetting Rhythm="4/4" Tempo="78" />
+    </Scene>
+  </Sequence>
+</Scenario>

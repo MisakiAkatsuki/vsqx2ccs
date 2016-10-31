@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scenario Code="7251BC4B6168E7B2992FA620BD3E1E77">
+  <Sequence Id="">
+    <Scene Id="">
+      <Units>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="721ec704-6e56-4b06-b607-4a93b870bc90" StartTime="00:00:00" Duration="00:10:00">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="90" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="3840" PitchStep="0" PitchOctave="5" Duration="960" Lyric="ド" />
+              <Note Clock="4800" PitchStep="2" PitchOctave="5" Duration="960" Lyric="レ" />
+              <Note Clock="5760" PitchStep="4" PitchOctave="5" Duration="960" Lyric="ミ" />
+              <Note Clock="6720" PitchStep="5" PitchOctave="5" Duration="960" Lyric="ファ" />
+              <Note Clock="7680" PitchStep="7" PitchOctave="5" Duration="960" Lyric="ソ" />
+              <Note Clock="8640" PitchStep="9" PitchOctave="5" Duration="960" Lyric="ラ" />
+              <Note Clock="9600" PitchStep="11" PitchOctave="5" Duration="960" Lyric="シ" />
+              <Note Clock="10560" PitchStep="0" PitchOctave="6" Duration="1920" Lyric="ド" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="6830cef3-2a7d-42e2-bc3f-381b08f371de" StartTime="00:00:00" Duration="00:10:00">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="90" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+              <Note Clock="19200" PitchStep="4" PitchOctave="4" Duration="960" Lyric="あ" />
+              <Note Clock="20160" PitchStep="5" PitchOctave="4" Duration="480" Lyric="い" />
+              <Note Clock="20640" PitchStep="7" PitchOctave="4" Duration="240" Lyric="う" />
+              <Note Clock="20880" PitchStep="9" PitchOctave="4" Duration="120" Lyric="え" />
+              <Note Clock="21120" PitchStep="4" PitchOctave="4" Duration="960" Lyric="お" />
+              <Note Clock="22080" PitchStep="6" PitchOctave="4" Duration="1920" Lyric="か" />
+              <Note Clock="24000" PitchStep="7" PitchOctave="4" Duration="2880" Lyric="き" />
+              <Note Clock="26880" PitchStep="9" PitchOctave="4" Duration="3840" Lyric="く" />
+              <Note Clock="30720" PitchStep="4" PitchOctave="5" Duration="3840" Lyric="け" />
+            </Score>
+          </Song>
+        </Unit>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="059c726f-d943-4ca7-b35e-28290c4ed804" StartTime="00:00:00" Duration="00:10:00">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="90" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+            </Score>
+          </Song>
+        </Unit>
+      </Units>
+      <Groups>
+        <Group Version="1.0" Id="721ec704-6e56-4b06-b607-4a93b870bc90" Category="SingerSong" Name="Track" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="6830cef3-2a7d-42e2-bc3f-381b08f371de" Category="SingerSong" Name="2test" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="059c726f-d943-4ca7-b35e-28290c4ed804" Category="SingerSong" Name="" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+      </Groups>
+      <SoundSetting Rhythm="4/4" Tempo="78" />
+    </Scene>
+  </Sequence>
+</Scenario>

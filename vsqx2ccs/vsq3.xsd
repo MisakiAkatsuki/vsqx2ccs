@@ -1,0 +1,1276 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+****************************************************************************************************
+  VOCALOID3 XML スキーマ定義.
+  
+    Version 3.0.0.0    2010/05/20    H.Nishizawa    新規作成.
+    Version 3.0.0.1    2010/05/21    H.Nishizawa    修正.
+    Version 3.0.0.2    2010/05/21    H.Nishizawa    修正.
+    Version 3.0.0.3    2010/09/01    H.Nishizawa    修正.
+    Version 3.0.0.4    2010/09/08    H.Nishizawa    修正.
+    Version 3.0.0.5    2010/09/21    H.Nishizawa    修正.
+    Version 3.0.0.6    2010/09/27    H.Nishizawa    修正.
+    Version 3.0.0.7    2011/01/19    H.Nishizawa    修正.
+    Version 3.0.0.8    2011/03/14    H.Nishizawa    修正.
+    Version 3.0.0.9    2011/06/02    H.Nishizawa    修正.
+    Version 3.0.0.10   2011/07/07    H.Nishizawa    修正.
+    Version 3.0.0.11   2011/08/11    H.Nishizawa    修正.
+  
+  修正履歴:
+    2010/5/20
+        ・新規作成
+            VSQバージョン： 3.0.0.0
+            作成者： H.Nishizawa
+    2010/5/21
+        ・ノードの出現順序の定義を修正した.
+        ・ミキサの要素名称中の"Fader"が誤解を招くため、"Unit"へ修正した.
+            VSQバージョン： 3.0.0.1
+            修正者： H.Nishizawa
+    2010/5/21
+        ・名前空間URIを修正した。
+        ・ルート要素名を"vsq"から"vsq3"へ修正した.
+            VSQバージョン： 3.0.0.2
+            修正者： H.Nishizawa
+    2010/9/1
+        ・VOCALOID2互換歌唱スタイルのパートパラメータの定義を修正した.
+            VSQバージョン： 3.0.0.3
+            修正者： H.Nishizawa
+    2010/9/9
+        ・VSTプラグインのパラメータ定義を追加／修正した.
+            VSQバージョン： 3.0.0.4
+            修正者： H.Nishizawa
+    2010/9/21
+        ・VSTプラグインのパラメータ設定値定義とプリセット番号定義を追加した.
+            VSQバージョン： 3.0.0.5
+            修正者： H.Nishizawa
+    2010/9/27
+        ・シーケンス型パラメータの要素の位置（posNrm）のデータ型を32ビット固定小数点型へ変更した.
+            VSQバージョン： 3.0.0.6
+            修正者： H.Nishizawa
+    2011/01/19
+        ・MusicalPart, ProsodyPart, WAVPartの各パートに,その最大再生時間を示す要素（playTime） 
+          を追加した.
+            VSQバージョン： 3.0.0.7
+            修正者： H.Nishizawa
+    2011/03/14
+        ・ノートイベントの"phnms"要素へ"lock"属性を追加した.
+            VSQバージョン： 3.0.0.8
+            修正者： H.Nishizawa
+    2011/06/02
+        ・ミキサのボリュームのとり得る値の範囲を -898～60 の整数値（デフォルト 0）へ変更した.
+          ただし,スキーマではValidateしないようにint型に変更した.
+        ・センドリターン用VSTプラグインのリターンレベルのとり得る値の範囲を -898～60 の整数値 
+          （デフォルト 0）へ変更した.
+          ただし,スキーマではValidateしないようにint型に変更した.
+        ・センドリターン用VSTプラグインへのセンドレベルのとり得る値の範囲を -898～60 の整数値 
+          （デフォルト -898）へ変更した.
+          ただし,スキーマではValidateしないようにint型に変更した.
+        ・ミキサのパンポットのとり得る値の範囲を 0～128 の整数値へ変更した.
+          ただし,スキーマではValidateしないようにint型に変更した.
+        ・マスタミキサユニットへセンドリターン用VSTプラグインをマウントできるように構造を変更した.
+        ・VSミキサユニットとSEミキサユニットへ,センドリターン用VSTプラグインへのセンドをON/OFF 
+          （デフォルト OFF）する要素（sendEnable）を追加した.
+            VSQバージョン： 3.0.0.9
+            修正者： H.Nishizawa
+    2011/07/07
+        ・予備的汎用情報ノード（aux）を追加した.
+            VSQバージョン： 3.0.0.10
+            修正者： H.Nishizawa
+    2011/08/05
+        ・VSTプラグインの開発SDKバージョンのとり得る値を, 0 または 2 または 3 へ変更した.
+          0 は無効化されたVSTプラグインを意味し,XML上のプレースホルダとして機能する.
+          すなわち,2番目のVSTプラグインBOXのみにマウントした場合に,それを正しく2番目のVSTプラグイン 
+          BOXにマウントされたVSTプラグインであると認識できるようにするため.
+            VSQバージョン： 3.0.0.11
+            修正者： H.Nishizawa
+    2011/08/11
+        ・サンプリング周波数96kHzのWAVファイルを扱えるように typeSamplerate 型 
+          の定義を修正した（サンプリング周波数96kHz対応時の修正漏れ）.
+            VSQバージョン： 3.0.0.11（変更なし） 
+            修正者： H.Nishizawa
+****************************************************************************************************
+-->
+
+<xsd:schema id="vsq3"
+    xmlns="http://www.yamaha.co.jp/vocaloid/schema/vsq3/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.yamaha.co.jp/vocaloid/schema/vsq3/"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+  <!--
+  **************************************************************************************************
+    要素の定義.
+  **************************************************************************************************
+  -->
+
+  <!--
+    最上位要素.
+  -->
+  <xsd:element name="vsq3">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- VSQフォーマットの開発元 -->
+        <xsd:element name="vender" type="typeStr256" />
+        
+        <!--
+          VSQフォーマットのバージョン.
+            xxx.xxx.xxx.xxx の形式の最大15桁の文字列.
+        -->
+        <xsd:element name="version" type="typeStrVersion" />
+        
+        <!-- バーチャルVoiceテーブル -->
+        <xsd:element ref="vVoiceTable" />
+        
+        <!-- ミキサ設定情報 -->
+        <xsd:element ref="mixer" />
+        
+        <!-- マスタトラック -->
+        <xsd:element ref="masterTrack" />
+        
+        <!--
+          VSトラック.
+            VSトラックは最低1個存在しなければならず,最大で16個まで存在できる.
+        -->
+        <xsd:element ref="vsTrack" maxOccurs="16" />
+        
+        <!--
+          SEトラック.
+            SEトラックは必ず1個存在しなければならない.
+        -->
+        <xsd:element ref="seTrack" />
+        
+        <!--
+          Karaokeトラック.
+            Karaokeトラックは必ず1個存在しなければならない.
+        -->
+        <xsd:element ref="karaokeTrack" />
+        
+        <!--
+          予備的汎用情報.
+            省略可能.個数制限なし.
+        -->
+        <xsd:element ref="aux" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    バーチャルVoiceテーブル.
+  -->
+  <xsd:element name="vVoiceTable">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          バーチャルVoice.
+            バーチャルVoiceは複数保持可能.
+            最大個数は理論的に vBS(128)*vPC(128)=16384 個まで.
+            ただし,vBSは言語IDを意味するため,1言語につき最大128個までとなる.
+        -->
+        <xsd:element ref="vVoice" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    バーチャルVoice.
+  -->
+  <xsd:element name="vVoice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          バーチャルバンクセレクト.
+            バーチャルバンクセレクトは言語IDを意味する.
+            言語IDは追加可能（0～127の整数）.現時点では以下の通り.
+              0: 日本語
+              1: 英語
+        -->
+        <xsd:element name="vBS" type="typeInt0to127" />
+        
+        <!--
+          バーチャルプログラムチェンジ.
+            バーチャルプログラムチェンジとバーチャルバンクセレクトの対で,
+            ユニークな1つのバーチャルVoiceを構成する.よって,この対は重複
+            して存在できない.（0～127の整数）
+        -->
+        <xsd:element name="vPC" type="typeInt0to127" />
+        
+        <!--
+          コンポーネントID.
+            Voiceライブラリを一意に識別するコンポーネントID.
+            16文字のASCII英数字から構成される.
+        -->
+        <xsd:element name="compID" type="typeComponentID" />
+        
+        <!--
+          バーチャルVoice名.
+            バーチャルVoiceに付与する名前（最大256文字）.
+            ユニークでなくてもよい.
+        -->
+        <xsd:element name="vVoiceName" type="typeStr256" />
+        
+        <!--
+          バーチャルVoiceパラメータ.
+            バーチャルVoiceに設定する音色パラメータのセット.
+        -->
+        <xsd:element ref="vVoiceParam" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    バーチャルVoiceパラメータ.
+  -->
+  <xsd:element name="vVoiceParam">
+    <xsd:complexType>
+      <xsd:all>
+        <xsd:element name="bre" type="typeIntM127to127" />
+        <xsd:element name="bri" type="typeIntM127to127" />
+        <xsd:element name="cle" type="typeIntM127to127" />
+        <xsd:element name="gen" type="typeIntM127to127" />
+        <xsd:element name="ope" type="typeIntM127to127" />
+      </xsd:all>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    ミキサ設定情報.
+  -->
+  <xsd:element name="mixer">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- マスタミキサユニット -->
+        <xsd:element ref="masterUnit" />
+        
+        <!-- VSトラックミキサユニット（最大16個まで存在可能） -->
+        <xsd:element ref="vsUnit" maxOccurs="16" />
+        
+        <!-- SEトラックミキサユニット -->
+        <xsd:element ref="seUnit" />
+        
+        <!-- Karaokeトラックミキサユニット -->
+        <xsd:element ref="karaokeUnit" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    マスタミキサユニット.
+  -->
+  <xsd:element name="masterUnit">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          出力先デバイス.
+            0以上: オーディオデバイスのデバイスID.
+            -1:    ReWire（VOCALOID3 Pro以上で使用する）
+        -->
+        <xsd:element name="outDev" type="xsd:short" />
+        
+        <!--
+          使用するVSTプラグイン.
+            最大2個まで指定可能.
+            2個指定する場合は,ノードの上から順に第1プラグイン,第2プラグインとする.
+        -->
+        <xsd:element ref="vstPlugin" minOccurs="0" maxOccurs="2" />
+        
+        <!--
+          使用するセンドリターン用VSTプラグイン.
+            0個または1個指定可能.
+        -->
+        <xsd:element ref="vstPluginSR" minOccurs="0" maxOccurs="1" />
+        
+        <!-- センドリターン用VSTプラグインのリターンレベル（-898～60の整数） -->
+        <xsd:element name="retLevel" type="xsd:int" />
+        
+        <!-- ボリューム（-898～60の整数） -->
+        <xsd:element name="vol" type="xsd:int" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    VSトラックミキサユニット（最大16個まで存在可能）
+  -->
+  <xsd:element name="vsUnit">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          VSトラック番号（0～15の整数）
+            VSトラックとVSトラックミキサユニットとを結びつけるキーである.
+            <vsTrack>ノードの<vsTrackNo>の値と1対1で対応する.
+        -->
+        <xsd:element name="vsTrackNo" type="typeInt0to127" />
+        
+        <!-- 入力ゲイントリム（-20～20の整数） -->
+        <xsd:element name="inGain" type="xsd:int" />
+        
+        <!--
+          使用するVSTプラグイン.
+            最大2個まで指定可能.
+            2個指定する場合は,ノードの上から順に第1プラグイン,第2プラグインとする.
+        -->
+        <xsd:element ref="vstPlugin" minOccurs="0" maxOccurs="2" />
+        
+        <!-- センドリターン用VSTプラグインへのセンドレベル（-898～60の整数） -->
+        <xsd:element name="sendLevel" type="xsd:int" />
+        
+        <!-- センドリターン用VSTプラグインへのセンドをON/OFFするスイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="sendEnable" type="typeSwitch" />
+        
+        <!-- Muteスイッチ（Muteするとき1, センドするとき0） -->
+        <xsd:element name="mute" type="typeSwitch" />
+        
+        <!-- Soloスイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="solo" type="typeSwitch" />
+        
+        <!-- パンポット（0～128の整数） -->
+        <xsd:element name="pan" type="xsd:int" />
+        
+        <!-- ボリューム（-898～60の整数） -->
+        <xsd:element name="vol" type="xsd:int" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    SEトラックミキサユニット.
+  -->
+  <xsd:element name="seUnit">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- 入力ゲイントリム（-20～20の整数） -->
+        <xsd:element name="inGain" type="xsd:int" />
+        
+        <!--
+          使用するVSTプラグイン.
+            最大2個まで指定可能.
+            2個指定する場合は,ノードの上から順に第1プラグイン,第2プラグインとする.
+        -->
+        <xsd:element ref="vstPlugin" minOccurs="0" maxOccurs="2" />
+        
+        <!-- センドリターン用VSTプラグインへのセンドレベル（-898～60の整数） -->
+        <xsd:element name="sendLevel" type="xsd:int" />
+        
+        <!-- センドリターン用VSTプラグインへのセンドをON/OFFするスイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="sendEnable" type="typeSwitch" />
+        
+        <!-- Muteスイッチ（Muteするとき1, センドするとき0） -->
+        <xsd:element name="mute" type="typeSwitch" />
+        
+        <!-- Soloスイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="solo" type="typeSwitch" />
+        
+        <!-- パンポット（0～128の整数） -->
+        <xsd:element name="pan" type="xsd:int" />
+        
+        <!-- ボリューム（-898～60の整数） -->
+        <xsd:element name="vol" type="xsd:int" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Karaokeトラックミキサユニット.
+  -->
+  <xsd:element name="karaokeUnit">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- 入力ゲイントリム（-20～20の整数） -->
+        <xsd:element name="inGain" type="xsd:int" />
+        
+        <!--
+          使用するVSTプラグイン.
+            最大2個まで指定可能.
+            2個指定する場合は,ノードの上から順に第1プラグイン,第2プラグインとする.
+        -->
+        <xsd:element ref="vstPlugin" minOccurs="0" maxOccurs="2" />
+        
+        <!-- Muteスイッチ（Muteするとき1, センドするとき0） -->
+        <xsd:element name="mute" type="typeSwitch" />
+        
+        <!-- Soloスイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="solo" type="typeSwitch" />
+        
+        <!-- ボリューム（-898～60の整数） -->
+        <xsd:element name="vol" type="xsd:int" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    VSTプラグイン.
+  -->
+  <xsd:element name="vstPlugin">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- VSTプラグインを一意に識別する文字列のID -->
+        <!-- SDKバージョン2の場合、4文字のASCII英数字 -->
+        <!-- SDKバージョン3の場合、36文字のGUID英数字 -->
+        <xsd:element name="vstPluginID" type="typeVstPluginID" />
+        
+        <!-- VSTプラグイン名（最大256文字） -->
+        <xsd:element name="vstPluginName" type="typeStr256" />
+        
+        <!-- VSTプラグインの開発SDKバージョン（2または3） -->
+        <xsd:element name="vstSDKVersion" type="typeVstSDKVersion" />
+        
+        <!-- VSTプラグインで利用可能なパラメータの総数（0以上の整数） -->
+        <xsd:element name="vstParamNum" type="xsd:int" />
+        
+        <!-- パラメータの設定値（vstParamNumが0のとき省略可能） -->
+        <xsd:element name="vstParamVal" minOccurs="0" maxOccurs="1" >
+          <xsd:complexType>
+            <xsd:sequence>
+              <!--
+                パラメータの設定値のリスト.
+                  vstParamNumの数だけ設定される.
+                  -1.0 ～ 1.0 の浮動小数点数を -2^24 ～ 2^24 の整数値に変換した値.
+              -->
+              <xsd:element name="val" type="xsd:int" minOccurs="0" maxOccurs="unbounded" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <!-- VSTプラグインのプリセット番号（省略可能） -->
+        <xsd:element name="vstPresetNo" type="xsd:int" minOccurs="0" maxOccurs="1" />
+        
+        <!-- ON/OFFスイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="enable" type="typeSwitch" />
+        
+        <!-- バイパススイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="bypass" type="typeSwitch" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    センドリターン用VSTプラグイン.
+  -->
+  <xsd:element name="vstPluginSR">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- VSTプラグインを一意に識別する文字列のID -->
+        <!-- SDKバージョン2の場合、4文字のASCII英数字 -->
+        <!-- SDKバージョン3の場合、36文字のGUID英数字 -->
+        <xsd:element name="vstPluginID" type="typeVstPluginID" />
+        
+        <!-- VSTプラグイン名（最大256文字） -->
+        <xsd:element name="vstPluginName" type="typeStr256" />
+        
+        <!-- VSTプラグインの開発SDKバージョン（2または3） -->
+        <xsd:element name="vstSDKVersion" type="typeVstSDKVersion" />
+        
+        <!-- VSTプラグインで利用可能なパラメータの総数（0以上の整数） -->
+        <xsd:element name="vstParamNum" type="xsd:int" />
+        
+        <!-- パラメータの設定値（vstParamNumが0のとき省略可能） -->
+        <xsd:element name="vstParamVal" minOccurs="0" maxOccurs="1" >
+          <xsd:complexType>
+            <xsd:sequence>
+              <!--
+                パラメータの設定値のリスト.
+                  vstParamNumの数だけ設定される.
+                  -1.0 ～ 1.0 の浮動小数点数を -2^24 ～ 2^24 の整数値に変換した値.
+              -->
+              <xsd:element name="val" type="xsd:int" minOccurs="0" maxOccurs="unbounded" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <!-- VSTプラグインのプリセット番号（省略可能） -->
+        <xsd:element name="vstPresetNo" type="xsd:int" minOccurs="0" maxOccurs="1" />
+        
+        <!-- ON/OFFスイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="enable" type="typeSwitch" />
+        
+        <!-- バイパススイッチ（ONのとき1, OFFのとき0） -->
+        <xsd:element name="bypass" type="typeSwitch" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    マスタトラック.
+  -->
+  <xsd:element name="masterTrack">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- シーケンス名（最大256文字） -->
+        <xsd:element name="seqName" type="typeStr256" />
+        
+        <!-- コメント（最大256文字） -->
+        <xsd:element name="comment" type="typeStr256" />
+        
+        <!-- 時間分解能（VOCALOID3では480固定） -->
+        <xsd:element name="resolution" type="xsd:unsignedShort" />
+        
+        <!-- プリメジャー（1～8の整数） -->
+        <xsd:element name="preMeasure" type="typeInt0to127" />
+        
+        <!--
+          拍子イベント.
+            複数存在可能（シーケンスの冒頭には必須）.
+        -->
+        <xsd:element ref="timeSig" maxOccurs="unbounded" />
+        
+        <!--
+          テンポイベント.
+            複数存在可能（シーケンスの冒頭には必須）.
+        -->
+        <xsd:element ref="tempo" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    拍子イベント.
+  -->
+  <xsd:element name="timeSig">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          拍子イベントの位置.
+            小節を単位とする.
+            プリメジャーの冒頭（シーケンスの冒頭）を原点として,
+            0からカウントした小節番号を拍子イベントの位置とする.
+        -->
+        <xsd:element name="posMes" type="xsd:int" />
+        
+        <!-- 拍子の分子（1～255の整数） -->
+        <xsd:element name="nume" type="xsd:unsignedByte" />
+        
+        <!-- 拍子の分母（1,2,4,8,16,32のいずれか） -->
+        <xsd:element name="denomi" type="xsd:unsignedByte" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    テンポイベント.
+  -->
+  <xsd:element name="tempo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          テンポイベントの位置
+            Tickを単位とする.
+            プリメジャーの冒頭（シーケンスの冒頭）を原点として,
+            0からカウントしたTickをテンポイベントの位置とする.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!--
+          テンポ（2000～30000の整数）
+            実際のテンポは 20.00～300.00 であり,その小数点第3桁目を切り捨て,
+            100を乗じた整数をVSQファイル上のテンポとして扱う.
+        -->
+        <xsd:element name="bpm" type="xsd:int" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    VSトラック.
+  -->
+  <xsd:element name="vsTrack">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          VSトラック番号（0～15の整数）
+            VSトラックとミキサのVSトラックミキサユニットとを結びつけるキーである.
+            ミキサの<vsUnit>ノードの<vsTrackNo>の値と1対1で対応する.
+        -->
+        <xsd:element name="vsTrackNo" type="typeInt0to127" />
+        
+        <!-- VSトラック名称（最大256文字） -->
+        <xsd:element name="trackName" type="typeStr256" />
+        
+        <!-- コメント（最大256文字） -->
+        <xsd:element name="comment" type="typeStr256" />
+        
+        <!--
+          0個以上のMusicalパートおよびProsodyパートのシーケンス.
+            パートは<posTick>の昇順でソートされる.
+        -->
+        <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+          <!-- Musicalパート -->
+          <xsd:element ref="musicalPart" />
+          
+          <!-- Prosodyパート -->
+          <xsd:element ref="prosodyPart" />
+        </xsd:choice>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Musicalパート.
+  -->
+  <xsd:element name="musicalPart">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          Musicalパートの先頭位置
+            Tickを単位とする.
+            プリメジャーの冒頭（シーケンスの冒頭）を原点として,
+            0からカウントしたTickをMusicalパートの先頭位置とする.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!--
+          パートの最大再生時間
+            Tickを単位とする.
+            これは,パートの先頭位置とパート内末尾イベント位置との距離を意味するDurationとは別の情報であり,
+            これ単独で設定することができる.
+            パートの最大再生時間を超えた位置にイベントを置くことも可能である.ただし,そのイベントは再生されない.
+        -->
+        <xsd:element name="playTime" type="xsd:int" />
+        
+        <!-- パート名称（最大256文字） -->
+        <xsd:element name="partName" type="typeStr256" />
+        
+        <!-- コメント（最大256文字） -->
+        <xsd:element name="comment" type="typeStr256" />
+        
+        <!--
+          当該パートで使用する歌唱スタイルプラグインの指定.
+            現行VOCALOID3では "VOCALOID2 Compatible Style" 固定.
+        -->
+        <xsd:element ref="stylePlugin" />
+        
+        <!--
+          歌唱スタイルプラグインのパートパラメータ.
+            現行VOCALOID3では "VOCALOID2 Compatible Style" 固定.
+        -->
+        <xsd:element ref="partStyle" minOccurs="0" />
+        
+        <!--
+          歌唱スタイルプラグインのフレーズパラメータイベント.
+        -->
+        <xsd:element ref="phraseStyle" minOccurs="0" maxOccurs="unbounded" />
+        
+        <!--
+          バーチャルVoiceチェンジイベント.
+            パートの冒頭には必須.
+        -->
+        <xsd:element ref="singer" maxOccurs="unbounded" />
+        
+        <!--
+          コントロールチェンジイベント.
+        -->
+        <xsd:element ref="mCtrl" minOccurs="0" maxOccurs="unbounded" />
+        
+        <!--
+          歌唱スタイルプラグインのコントロールチェンジイベント.
+        -->
+        <xsd:element ref="sCtrl" minOccurs="0" maxOccurs="unbounded" />
+        
+        <!--
+          ノートイベント.
+        -->
+        <xsd:element ref="note" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    歌唱スタイルプラグイン.
+  -->
+  <xsd:element name="stylePlugin">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- 歌唱スタイルプラグインを一意に識別するGUID -->
+        <xsd:element name="stylePluginID" type="typeStrGUID" />
+        
+        <!-- 歌唱スタイルプラグイン名（最大256文字） -->
+        <xsd:element name="stylePluginName" type="typeStr256" />
+        
+        <!-- 歌唱スタイルプラグインのバージョン -->
+        <xsd:element name="version" type="typeStrVersion" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    歌唱スタイルプラグインのパートパラメータ.
+  -->
+  <xsd:element name="partStyle">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          パートパラメータの値.
+            "id" 属性にパラメータ名を指定する.
+            内容に "id" 属性で指定したパラメータ名に対応する値を指定する.
+            値はすべて整数とする.
+        -->
+        <xsd:element name="attr" type="typeParamAttr" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    歌唱スタイルプラグインのフレーズパラメータイベント.
+  -->
+  <xsd:element name="phraseStyle">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          フレーズパラメータイベントの位置.
+            Tickを単位とする.
+            当該パートの冒頭を原点として,0からカウントしたTickである.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!--
+          フレーズパラメータイベントの値.
+            "id" 属性にパラメータ名を指定する.
+            内容に "id" 属性で指定したパラメータ名に対応する値を指定する.
+            値はすべて整数とする.
+        -->
+        <xsd:element name="attr" type="typeParamAttr" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    MusicalパートのバーチャルVoiceチェンジイベント.
+  -->
+  <xsd:element name="singer">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          バーチャルVoiceチェンジイベントの位置.
+            Tickを単位とする.
+            当該パートの冒頭を原点として,0からカウントしたTickである.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!--
+          バーチャルバンクセレクト.
+            バーチャルVoiceテーブルに存在しなければならない.
+        -->
+        <xsd:element name="vBS" type="typeInt0to127" />
+        
+        <!--
+          バーチャルプログラムチェンジ.
+            バーチャルプログラムチェンジとバーチャルバンクセレクトの対が,
+            バーチャルVoiceテーブルに存在しなければならない.
+        -->
+        <xsd:element name="vPC" type="typeInt0to127" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Musicalパートのコントロールチェンジイベント.
+  -->
+  <xsd:element name="mCtrl">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          コントロールチェンジイベントの位置.
+            Tickを単位とする.
+            当該パートの冒頭を原点として,0からカウントしたTickである.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!--
+          コントロールチェンジイベントの値.
+            "id" 属性にコントロール名を指定する.
+            内容に "id" 属性で指定したコントロール名に対応する値を指定する.
+            値はすべて整数とする.
+        -->
+        <xsd:element name="attr" type="typeParamAttr" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    歌唱スタイルプラグインのコントロールチェンジイベント.
+  -->
+  <xsd:element name="sCtrl">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          コントロールチェンジイベントの位置.
+            Tickを単位とする.
+            当該パートの冒頭を原点として,0からカウントしたTickである.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!--
+          コントロールチェンジイベントの値.
+            "id" 属性にコントロール名を指定する.
+            内容に "id" 属性で指定したコントロール名に対応する値を指定する.
+            値はすべて整数とする.
+        -->
+        <xsd:element name="attr" type="typeParamAttr" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    ノートイベント.
+  -->
+  <xsd:element name="note">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          ノートイベントの位置.
+            Tickを単位とする.
+            当該パートの冒頭を原点として,0からカウントしたTickである.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!-- ノートのDuration（Tickを単位とする） -->
+        <xsd:element name="durTick" type="xsd:int" />
+        
+        <!-- ノート番号（0～127の整数） -->
+        <xsd:element name="noteNum" type="typeInt0to127" />
+        
+        <!-- ノートベロシティー（0～127の整数） -->
+        <xsd:element name="velocity" type="typeInt0to127" />
+        
+        <!-- 歌詞（最大32文字） -->
+        <xsd:element name="lyric" type="typeStr32" />
+        
+        <!-- 音素記号 -->
+        <xsd:element name="phnms" type="typePhonemes" />
+        
+        <!-- 歌唱スタイルプラグインのノートパラメータ -->
+        <xsd:element ref="noteStyle" minOccurs="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    歌唱スタイルプラグインのノートパラメータ.
+  -->
+  <xsd:element name="noteStyle">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          歌唱スタイルプラグインのノートパラメータの値.
+            "id" 属性にパラメータ名を指定する.
+            内容に "id" 属性で指定したパラメータ名に対応する値を指定する.
+            値はすべて整数とする.
+        -->
+        <xsd:element name="attr" type="typeParamAttr" minOccurs="0" maxOccurs="unbounded" />
+        
+        <!--
+          歌唱スタイルプラグインのシーケンス型ノートパラメータ.
+            "id" 属性にシーケンス型パラメータ名を指定する.
+        -->
+        <xsd:element ref="seqAttr" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    歌唱スタイルプラグインのシーケンス型ノートパラメータ.
+  -->
+  <xsd:element name="seqAttr">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- シーケンス型パラメータの要素（0個以上存在可能） -->
+        <xsd:element name="elem" maxOccurs="unbounded" >
+          <xsd:complexType>
+            <xsd:sequence>
+              <!--
+                ノートの先頭を0,末尾を1と正規化した相対位置.
+                  32ビット固定小数点数の整数表現形式で保存する.
+              -->
+              <xsd:element name="posNrm" type="xsd:int" />
+              
+              <!-- 要素の値（Y座標） -->
+              <xsd:element name="elv" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      
+      <!-- シーケンス型パラメータ名 -->
+      <xsd:attribute name="id" type="typeStr32" use="required" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Prosodyパート.
+  -->
+  <xsd:element name="prosodyPart">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          Prosodyパートの先頭位置
+            Tickを単位とする.
+            プリメジャーの冒頭（シーケンスの冒頭）を原点として,
+            0からカウントしたTickをProsodyパートの先頭位置とする.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!--
+          パートの最大再生時間
+            Tickを単位とする.
+            これは,パートの先頭位置とパート内末尾イベント位置との距離を意味するDurationとは別の情報であり,
+            これ単独で設定することができる.
+            パートの最大再生時間を超えた位置にイベントを置くことも可能である.ただし,そのイベントは再生されない.
+        -->
+        <xsd:element name="playTime" type="xsd:int" />
+
+        <!-- パート名称（最大256文字） -->
+        <xsd:element name="partName" type="typeStr256" />
+        
+        <!-- コメント（最大256文字） -->
+        <xsd:element name="comment" type="typeStr256" />
+        
+        <!-- バーチャルVoiceチェンジイベント -->
+        <xsd:element ref="voice" maxOccurs="unbounded" />
+        
+        <!-- コントロールチェンジイベント -->
+        <xsd:element ref="pCtrl" minOccurs="0" maxOccurs="unbounded" />
+        
+        <!-- ピッチイベント -->
+        <xsd:element ref="pch" maxOccurs="unbounded" />
+        
+        <!-- ダイナミクスイベント -->
+        <xsd:element ref="dyn" maxOccurs="unbounded" />
+        
+        <!-- Phonemeイベント -->
+        <xsd:element ref="phnm" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    ProsodyパートのバーチャルVoiceチェンジイベント.
+  -->
+  <xsd:element name="voice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          バーチャルVoiceチェンジイベントの位置.
+            当該パートの冒頭を原点とするSecを単位とする.
+            32ビット固定小数点数の整数表現形式で保存する.
+        -->
+        <xsd:element name="posSec" type="xsd:int" />
+        
+        <!--
+          バーチャルバンクセレクト.
+            バーチャルVoiceテーブルに存在しなければならない.
+        -->
+        <xsd:element name="vBS" type="typeInt0to127" />
+        
+        <!--
+          バーチャルプログラムチェンジ.
+            バーチャルプログラムチェンジとバーチャルバンクセレクトの対が,
+            バーチャルVoiceテーブルに存在しなければならない.
+        -->
+        <xsd:element name="vPC" type="typeInt0to127" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Prosodyパートのコントロールチェンジイベント.
+  -->
+  <xsd:element name="pCtrl">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          コントロールチェンジイベントの位置.
+            当該パートの冒頭を原点とするSecを単位とする.
+            32ビット固定小数点数の整数表現形式で保存する.
+        -->
+        <xsd:element name="posSec" type="xsd:int" />
+        
+        <!--
+          コントロールチェンジイベントの値.
+            "id" 属性にコントロール名を指定する.
+            内容に "id" 属性で指定したコントロール名に対応する値を指定する.
+            値はすべて整数とする.
+        -->
+        <xsd:element name="attr" type="typeParamAttr" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Prosodyパートのピッチイベント.
+  -->
+  <xsd:element name="pch">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          バーチャルVoiceチェンジイベントの位置.
+            当該パートの冒頭を原点とするSecを単位とする.
+            32ビット固定小数点数の整数表現形式で保存する.
+        -->
+        <xsd:element name="posSec" type="xsd:int" />
+        
+        <!-- ピッチの値（32ビット固定小数点数の整数表現形式で保存する） -->
+        <xsd:element name="pchVal" type="xsd:int" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Prosodyパートのダイナミクスイベント.
+  -->
+  <xsd:element name="dyn">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          バーチャルVoiceチェンジイベントの位置.
+            当該パートの冒頭を原点とするSecを単位とする.
+            32ビット固定小数点数の整数表現形式で保存する.
+        -->
+        <xsd:element name="posSec" type="xsd:int" />
+        
+        <!-- ダイナミクスの値（32ビット固定小数点数の整数表現形式で保存する） -->
+        <xsd:element name="dynVal" type="xsd:int" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    ProsodyパートのPhonemeイベント.
+  -->
+  <xsd:element name="phnm">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          バーチャルVoiceチェンジイベントの位置.
+            当該パートの冒頭を原点とするSecを単位とする.
+            32ビット固定小数点数の整数表現形式で保存する.
+        -->
+        <xsd:element name="posSec" type="xsd:int" />
+        
+        <!-- PhonemeイベントのDuration（32ビット固定小数点数の整数表現形式で保存する） -->
+        <xsd:element name="durSec" type="xsd:int" />
+        
+        <!-- Phoneme（最大32文字） -->
+        <xsd:element name="phnmStr" type="typeStr32" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    SEトラック.
+  -->
+  <xsd:element name="seTrack">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- WAVパート -->
+        <xsd:element ref="wavPart" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    Karaokeトラック.
+  -->
+  <xsd:element name="karaokeTrack">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- WAVパート -->
+        <xsd:element ref="wavPart" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    WAVパート.
+  -->
+  <xsd:element name="wavPart">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--
+          WAVパートの先頭位置
+            Tickを単位とする.
+            プリメジャーの冒頭（シーケンスの冒頭）を原点として,
+            0からカウントしたTickをProsodyパートの先頭位置とする.
+        -->
+        <xsd:element name="posTick" type="xsd:int" />
+        
+        <!--
+          パートの最大再生時間
+            Tickを単位とする.
+            これは,パートの先頭位置とパート内末尾サンプル位置との距離を意味するDurationとは別の情報であり,
+            これ単独で設定することができる.
+            パートの最大再生時間を超えた位置にサンプルを存在させることも可能である.ただし,そのサンプルは再生されない.
+        -->
+        <xsd:element name="playTime" type="xsd:int" />
+
+        <!-- パート名称（最大256文字） -->
+        <xsd:element name="partName" type="typeStr256" />
+        
+        <!-- コメント（最大256文字） -->
+        <xsd:element name="comment" type="typeStr256" />
+        
+        <!-- サンプリング周波数 -->
+        <xsd:element name="sampleRate" type="typeSamplerate" />
+        
+        <!-- 量子化ビット数 -->
+        <xsd:element name="sampleReso" type="typeResolution" />
+        
+        <!-- チャンネル数 -->
+        <xsd:element name="channels" type="typeChannel" />
+        
+        <!-- 当該VSQファイルを起点としたソースWAVファイルの相対パス（最大260文字） -->
+        <xsd:element name="filePath" type="typeFilePath" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!--
+    予備的汎用情報.
+  -->
+  <xsd:element name="aux">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!-- 識別ID（最大256文字） -->
+        <xsd:element name="auxID" type="typeStr256" />
+        
+        <!-- 内容文字列（長さ制限無し） -->
+        <xsd:element name="content" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <!--
+  **************************************************************************************************
+    カスタムタイプの定義.
+  **************************************************************************************************
+  -->
+
+  <!-- 最大256文字までの文字列 -->
+  <xsd:simpleType name="typeStr256">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="256" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- 最大32文字までの文字列 -->
+  <xsd:simpleType name="typeStr32">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="32" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- ファイルパス名 -->
+  <xsd:simpleType name="typeFilePath">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="260" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- バージョン文字列 -->
+  <xsd:simpleType name="typeStrVersion">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="15" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- GUID文字列 -->
+  <xsd:simpleType name="typeStrGUID">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="36" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- コンポーネントID -->
+  <xsd:simpleType name="typeComponentID">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="16" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- VSTプラグインID -->
+  <xsd:simpleType name="typeVstPluginID">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="4" />
+      <xsd:maxLength value="36" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- VSTプラグインの開発SDKバージョン -->
+  <xsd:simpleType name="typeVstSDKVersion">
+    <xsd:restriction base="xsd:unsignedByte">
+      <xsd:enumeration value="0" />
+      <xsd:enumeration value="2" />
+      <xsd:enumeration value="3" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- 0～127の範囲の整数 -->
+  <xsd:simpleType name="typeInt0to127">
+    <xsd:restriction base="xsd:unsignedByte">
+      <xsd:minInclusive value="0" />
+      <xsd:maxInclusive value="127" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- -127～127の範囲の整数 -->
+  <xsd:simpleType name="typeIntM127to127">
+    <xsd:restriction base="xsd:byte">
+      <xsd:minInclusive value="-127" />
+      <xsd:maxInclusive value="127" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- ON/OFF スイッチ -->
+  <xsd:simpleType name="typeSwitch">
+    <xsd:restriction base="xsd:unsignedByte">
+      <xsd:minInclusive value="0" />
+      <xsd:maxInclusive value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- チャンネル数（モノラル/ステレオ） -->
+  <xsd:simpleType name="typeChannel">
+    <xsd:restriction base="xsd:unsignedByte">
+      <xsd:minInclusive value="1" />
+      <xsd:maxInclusive value="2" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- サンプリング周波数 -->
+  <xsd:simpleType name="typeSamplerate">
+    <xsd:restriction base="xsd:unsignedInt">
+      <xsd:enumeration value="44100" />
+      <xsd:enumeration value="48000" />
+      <xsd:enumeration value="96000" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- 量子化ビット数 -->
+  <xsd:simpleType name="typeResolution">
+    <xsd:restriction base="xsd:unsignedByte">
+      <xsd:enumeration value="16" />
+      <xsd:enumeration value="24" />
+      <xsd:enumeration value="32" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- パラメータ属性 -->
+  <xsd:complexType name="typeParamAttr">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:int">
+        <xsd:attribute name="id" type="typeStr32" use="required" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <!-- ノートイベントの音素記号 -->
+  <xsd:complexType name="typePhonemes">
+    <xsd:simpleContent>
+      <xsd:extension base="typeStr32">
+        <xsd:attribute name="lock" type="typeSwitch" use="optional" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+</xsd:schema>

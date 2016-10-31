@@ -1,0 +1,4 @@
+c:\users\rui\documents\visual studio 2010\Projects\vsqx2ccs\vsqx2ccs\bin\Debug\vsqx2ccs.exe
+c:\users\rui\documents\visual studio 2010\Projects\vsqx2ccs\vsqx2ccs\bin\Debug\vsqx2ccs.pdb
+c:\users\rui\documents\visual studio 2010\Projects\vsqx2ccs\vsqx2ccs\obj\x86\Debug\vsqx2ccs.exe
+c:\users\rui\documents\visual studio 2010\Projects\vsqx2ccs\vsqx2ccs\obj\x86\Debug\vsqx2ccs.pdb

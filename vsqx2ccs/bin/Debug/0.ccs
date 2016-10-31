@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scenario Code="7251BC4B6168E7B2992FA620BD3E1E77">
+  <Sequence Id="">
+    <Scene Id="">
+      <Units>
+        <Unit Version="1.0" Id="" Category="SingerSong" Group="771dd240-c27b-4509-aa67-9ebe3ce0503c" StartTime="00:00:00" Duration="00:00:02">
+          <Song Version="1.02">
+            <Tempo>
+              <Sound Clock="0" Tempo="120" />
+            </Tempo>
+            <Beat>
+              <Time Clock="0" Beats="4" BeatType="4" />
+              <Time Clock="3840" Beats="5" BeatType="4" />
+              <Time Clock="8640" Beats="3" BeatType="4" />
+              <Time Clock="11520" Beats="4" BeatType="4" />
+            </Beat>
+            <Score>
+              <Key Clock="0" Fifths="0" Mode="0" />
+            </Score>
+          </Song>
+        </Unit>
+      </Units>
+      <Groups>
+        <Group Version="1.0" Id="15eb3a00-1309-4ba5-924b-8349ab140104" Category="TextVocal" Name="トーク 1" Color="#FF1E90FF" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+        <Group Version="1.0" Id="771dd240-c27b-4509-aa67-9ebe3ce0503c" Category="SingerSong" Name="ソング 1" Color="#FFFF0000" Volume="0" Pan="0" IsSolo="false" IsMuted="false" />
+      </Groups>
+      <SoundSetting Rhythm="4/4" Tempo="78" />
+    </Scene>
+  </Sequence>
+</Scenario>
